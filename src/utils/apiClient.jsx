@@ -24,7 +24,7 @@ export const ApiClient = async (
     const response = await fetch(url, { method, signal });
 
     if (!response.ok) {
-      let errormessage = "An unexpected errro occureed.";
+      let errormessage = "An unexpected error occurred.";
 
       switch (response.status) {
         case 400:
@@ -37,12 +37,11 @@ export const ApiClient = async (
           errormessage = "Not Found: The resource doesn't exist.";
           break;
         case 429:
-          errormessage =
-            "Rate Limit Exceeded: Slow down! CoinGecko is blocking us.";
+          errormessage = "Rate Limit Exceeded: Slow down!.";
           break;
 
         case 500:
-          errormessage = "Server Error: CoinGecko is having trouble.";
+          errormessage = "Server Error.";
           break;
       }
       return {

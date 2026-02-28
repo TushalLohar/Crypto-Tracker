@@ -2,9 +2,9 @@ import GlobalMarketData from "../utils/marketAPI";
 import { useState, useEffect } from "react";
 
 export const useMarketData = ({
-  page = 1,
-  perPage = 50,
-  currency = "usd",
+  page ,
+  perPage, 
+  currency
 } = {}) => {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(true);
